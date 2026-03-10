@@ -57,3 +57,13 @@ By default, Wazuh only stores logs that trigger an alert. To effectively hunt fo
         <id>T1003</id>
     </mitre>
 </rule>
+```
+2. Verifying Detection
+After implementing Rule ID 100002, the Wazuh dashboard successfully triggered 3 critical severity alerts.
+![Wazuh Critical Alerts](images/Screenshot%202026-01-27%20003323.png)
+A deeper dive into the specific alert details confirmed that it successfully parsed the win.eventdata.originalFileName and fired our custom Mimikatz detection rule.
+
+A targeted query in the wazuh-archives* index confirmed 3 successful detections of the Mimikatz activity, validating that the rule is functioning as intended to catch credential dumping.
+
+![Alerts](images/Screenshot%202026-01-27%20003313.png)
+
