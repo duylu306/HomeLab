@@ -37,9 +37,6 @@ Digging deeper into the memory map of the process, we can clearly see that `C:\W
 ![Memory Map clr.dll](images/Screenshot%202026-03-11%20113205.png)
 *(Image: Memory map showing the base address and size of the loaded clr.dll module)*
 
-![Memory Map Details](images/Screenshot%202026-03-11%20115640.png)
-*(Image: Further details of the injected memory region and .NET assemblies)*
-
 ---
 
 ## Phase 3: Hunting for IOCs with Telemetry
@@ -68,3 +65,4 @@ Image IN (
 
 Conclusion
 This exercise highlights the forensic footprint left behind by in-memory execution techniques. While injecting into unmanaged processes can successfully bypass traditional antivirus file scanning and process-execution logging (Event ID 1), it creates a loud anomaly in process memory. By monitoring for unexpected .NET runtime module loads (clr.dll), defenders can effectively hunt for and detect advanced evasion techniques like PowerShell and C# injection.
+
